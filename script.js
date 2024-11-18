@@ -56,3 +56,11 @@ function hideTabs() {
   hideTabs();//hides all the tabs
   showTab('tab1');//shows the content of the first tab
 
+tabLinks.forEach(link => {
+    link.addEventListener('click', (event) =>{
+        event.preventDefault();
+        const targetTab = link.id.replace('Link', '');
+        hideTabs();
+        showTab(targetTab);
+    })
+})
