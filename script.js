@@ -39,3 +39,20 @@ window.addEventListener('keydown', (event) => {
 //tabbed layout
 const tabLinks = document.querySelectorAll('#tabbed-layout ul li a');//all the tab links
 const tabContents = document.querySelectorAll('#tabbed-contents > div');// all the tab content
+
+// Function to hide all tabs
+function hideTabs() {
+    tabContents.forEach(tab => { // Loop through each tab content
+      tab.style.display = "none"; // Set each tab content's display to none
+    });
+
+  }
+
+  //function to show specific tab
+  function showId(tabId){
+    document.getElementById(tabId).style.display = "block";// Set the display style of the specified tab content to "block" to make it visible
+  }
+
+  hideTabs();//hides all the tabs
+  showTab('tab1');//shows the content of the first tab
+
