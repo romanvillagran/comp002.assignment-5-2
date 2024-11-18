@@ -23,3 +23,19 @@
 
 const balloon = document.getElementById('ballon')
 balloon.style.fontsize = "100px"; // Initial size of the balloon emoji
+
+// keydown events to control the balloon size
+window.addEventListener('keydown', (event) => {
+    if (event.key === "ArrowUp"){
+        let CurrentSize = parseInt(balloon.style.fontsize);//get current font size
+        balloon.style.fontsize = CurrentSize * 1.1 + "px"//inflates the balloon 
+    }
+    else if (event.key === "ArrowDown"){
+        let currentSize = parseInt(balloon.style.fontSize); //get current font size
+        balloon.style.fontsize = currentSize * 0.9 + "px"//deflates the balloon
+    }
+});
+
+//tabbed layout
+const tabLinks = document.querySelectorAll('#tabbed-layout ul li a');//all the tab links
+const tabContents = document.querySelectorAll('#tabbed-contents > div');// all the tab content
